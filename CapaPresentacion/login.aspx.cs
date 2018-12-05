@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidades;
+using CapaLogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,17 +18,15 @@ namespace CapaPresentacion
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string pwduser = txtPassword.Text;
-            string nombre = "devfko";
-            string pass = "12345";
+            Empleado objEmpleado = EmpleadoLN.getInstance().AccesoSistema(txtUsername.Text, txtPassword.Text);
 
-            if(username.Equals(nombre) && pwduser.Equals(pass))
+            if(objEmpleado != null)
             {
-                Response.Write("<script>alert('Login Correcto');</script>");
-            }else
+                Response.Write("<script>alert('USUARIO CORRECTO')</script>");
+            }
+            else
             {
-                Response.Write("<script>alert('Login Incorrecto');</script>");
+                Response.Write("<script>alert('USUARIO INCORRECTO')</script>");
             }
         }
     }

@@ -1,0 +1,11 @@
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csprojResolveAssemblyReference.cache
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.dll
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaEntidades.dll
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\MySql.Data.dll
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.pdb
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\CapaEntidades.pdb
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\bin\Debug\MySql.Data.xml
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+D:\Proyectos\SistemaSaludWeb\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb

@@ -1,3 +1,4 @@
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\roslyn\csc.exe
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -13,8 +14,15 @@ D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\roslyn\VBCSCompiler.exe.config
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaPresentacion.dll.config
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaPresentacion.dll
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaPresentacion.pdb
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaEntidades.dll
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaLogicaNegocio.dll
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\MySql.Data.dll
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaAccesoDatos.dll
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaEntidades.pdb
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaLogicaNegocio.pdb
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Proyectos\SistemaSaludWeb\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\MySql.Data.xml
+D:\Proyectos\SistemaSaludWeb\CapaPresentacion\bin\CapaAccesoDatos.pdb
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 D:\Proyectos\SistemaSaludWeb\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
