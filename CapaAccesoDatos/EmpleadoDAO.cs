@@ -44,7 +44,7 @@ namespace CapaAccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("prmUser", user);
                 cmd.Parameters.AddWithValue("prmPass", pass);
-                conexion.Open();                
+                conexion.Open();
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
