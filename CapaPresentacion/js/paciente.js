@@ -11,11 +11,13 @@
                 ((data[i].Sexo == 'M') ? "Masculino" : "Femenino"),
                 data[i].Edad,
                 data[i].Direccion,
-                ((data[i].Estado == true) ? 'Activo' : 'Inactivo')
+                '<button value="Modificar" class="btn btn-primary"><i class="fa fa-square"></i></button>'
             ]);
         }
     });
 }
+
+//((data[i].Estado == true) ? 'Activo' : 'Inactivo')
 
 function sendDataAjax() {
     $.ajax({

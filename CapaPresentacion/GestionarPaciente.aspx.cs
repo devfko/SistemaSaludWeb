@@ -48,7 +48,7 @@ namespace CapaPresentacion
             objPaciente.NroDocumento = txtNroDocumento.Text;
             objPaciente.Telefono = txtTelefono.Text;
             objPaciente.Direccion = txtDireccion.Text;
-            objPaciente.Estado = true;
+            //objPaciente.Estado = true;
 
             return objPaciente;
         }

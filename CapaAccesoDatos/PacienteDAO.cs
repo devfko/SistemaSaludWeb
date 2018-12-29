@@ -90,7 +90,7 @@ namespace CapaAccesoDatos
                     objPaciente.Sexo = Convert.ToChar(dr["sexo"].ToString());
                     objPaciente.NroDocumento = dr["nroDocumento"].ToString();
                     objPaciente.Direccion = dr["direccion"].ToString();
-                    objPaciente.Estado = true;
+                    //objPaciente.Estado = true;
 
                     lista.Add(objPaciente);
                 }

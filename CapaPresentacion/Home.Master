@@ -8,6 +8,10 @@
     <title>Sistema Salud Web</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" type="text/css"/>
@@ -83,8 +87,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href=" https://cdn.datatables.net/1.9.4/css/jquery.dataTables.css" />
-    <script type="text/javascript" src="https://cdn.datatables.net/1.9.4/js/jquery.dataTables.min.js">
-    </script> <script type="text/javascript" src="js/paciente.js"></script>
-    <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.9.4/js/jquery.dataTables.min.js"></script> 
+    <script type="text/javascript" src="js/paciente.js"></script>
+    <script src="js/AdminLTE/app.js" type="text/javascript"></script>     
 </body>
 </html>
