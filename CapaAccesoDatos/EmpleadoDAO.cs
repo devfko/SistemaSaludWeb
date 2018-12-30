@@ -64,6 +64,6 @@ namespace CapaAccesoDatos
                 conexion.Close();
             }
             return objEmpleado;
-        }
+        }        
     }
 }

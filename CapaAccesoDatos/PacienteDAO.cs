@@ -90,7 +90,7 @@ namespace CapaAccesoDatos
                     objPaciente.Sexo = Convert.ToChar(dr["sexo"].ToString());
                     objPaciente.NroDocumento = dr["nroDocumento"].ToString();
                     objPaciente.Direccion = dr["direccion"].ToString();
-                    //objPaciente.Estado = true;
+                    objPaciente.Estado = true;
 
                     lista.Add(objPaciente);
                 }
@@ -104,6 +104,35 @@ namespace CapaAccesoDatos
                 conexion.Close();
             }
             return lista;
+        }
+
+        public bool ActualizarPaciente(Paciente objPaciente)
+        {            
+            MySqlConnection conexion = null;
+            MySqlCommand cmd = null;
+            bool respuesta = false;
+
+            try
+            {
+                conexion = Conexion.getInstance().ConexionBD();
+                cmd = conexion.CreateCommand();
+                cmd.CommandText = "SPActualizarPaciente";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("prmId", objPaciente.IdPaciente);
+                cmd.Parameters.AddWithValue("prmDireccion", objPaciente.Direccion);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+                respuesta = true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
         }
     }
 }

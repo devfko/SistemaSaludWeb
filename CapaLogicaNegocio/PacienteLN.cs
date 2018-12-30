@@ -48,5 +48,16 @@ namespace CapaLogicaNegocio
             }
 
         }
+
+        public bool ActualizarDatoPaciente(Paciente objPaciente)
+        {
+            try
+            {
+                return PacienteDAO.getInstance().ActualizarPaciente(objPaciente);
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

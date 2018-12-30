@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="GestionarPaciente.aspx.cs" Inherits="CapaPresentacion.frmGestionarPaciente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="GestionarPaciente.aspx.cs" Inherits="CapaPresentacion.frmGestionarPaciente" ClientIDMode="Static" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">        
 </asp:Content>
@@ -115,6 +115,36 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
+
+    <div class="modal fade" id="imodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="moda-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Actualizar Registro</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>NOMBRES Y APELLIDOS</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtFullName" runat="server" Text="" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label>DIRECCION</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtModalDireccion" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnActualizar">Actualizar Información</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </asp:Content>
