@@ -49,6 +49,18 @@ namespace CapaPresentacion
             return respuesta;
         }
 
+        [WebMethod]
+        public static bool EliminarDatosPaciente(String id)
+        {
+            Paciente objPaciente = new Paciente()
+            {
+                IdPaciente = Convert.ToInt32(id)
+            };
+
+            bool respuesta = PacienteLN.getInstance().EliminarDatosPaciente(objPaciente);
+
+            return respuesta;
+        }
 
         private Paciente GetEntity()
         {
@@ -62,7 +74,7 @@ namespace CapaPresentacion
             objPaciente.NroDocumento = txtNroDocumento.Text;
             objPaciente.Telefono = txtTelefono.Text;
             objPaciente.Direccion = txtDireccion.Text;
-            //objPaciente.Estado = true;
+            objPaciente.Estado = true;
 
             return objPaciente;
         }

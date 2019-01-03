@@ -134,5 +134,35 @@ namespace CapaAccesoDatos
             }
             return respuesta;
         }
+
+        public bool EliminarPaciente(Paciente objPaciente)
+        {
+            MySqlConnection conexion = null;
+            MySqlCommand cmd = null;
+            bool respuesta = false;
+
+            try
+            {
+                conexion = Conexion.getInstance().ConexionBD();
+                cmd = conexion.CreateCommand();
+                cmd.CommandText = "SPEliminarPaciente";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("prmIDPaciente", objPaciente.IdPaciente);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+                respuesta = true;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
+        }
+
     }
 }

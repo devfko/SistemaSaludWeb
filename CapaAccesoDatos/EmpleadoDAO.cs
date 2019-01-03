@@ -43,6 +43,9 @@ namespace CapaAccesoDatos
                 cmd.CommandText = "SPLogin";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("prmUser", user);
+
+                //string hash = Helper.EncodePassword(string.Concat(user, pass));
+                //cmd.Parameters.AddWithValue("@password", hash);
                 cmd.Parameters.AddWithValue("prmPass", pass);
                 conexion.Open();
                 dr = cmd.ExecuteReader();
