@@ -24,16 +24,10 @@ namespace CapaPresentacion.Custom
             get { return this._currentSession; }
         }
 
-        public string UserSession
-        {
-            set { CurrentSession["UserSession"] = value; }
-            get { return (string)CurrentSession["UserSession"]; }
-        }
-
         public Empleado UserSessionObjeto
         {
-            set { CurrentSession["UserSessionObjeto"] = value; }
-            get { return (Empleado)CurrentSession["UserSessionObjeto"]; }
+            set { CurrentSession["UserSistemaWeb"] = value; }
+            get { return (Empleado)CurrentSession["UserSistemaWeb"]; }
         }
         #endregion
     }

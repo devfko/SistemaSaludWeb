@@ -19,7 +19,6 @@ namespace CapaPresentacion.Custom
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
-            Session["KEYSTORE"] = "0";
             this._sessionManager = new SessionManager(Session);
         }
 
@@ -40,11 +39,12 @@ namespace CapaPresentacion.Custom
                         string cookie = Request.Headers["Cookie"];
                         if (cookie != null && cookie.IndexOf("ASP.NET_SessionId") >= 0)
                         {
-                            Response.Redirect("~/PanelGeneral.aspx");
+                            Response.Redirect("~/login.aspx");
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         Response.Redirect("~/login.aspx");
                     }
                 }

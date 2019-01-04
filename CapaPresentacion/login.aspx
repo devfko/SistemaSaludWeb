@@ -13,23 +13,22 @@
 <body class="bg-black">
     <div class="form-box" id="login-box">
         <form id="form1" runat="server">
-            <asp:Login ID="LoginUser" runat="server" EnableViewState="false" OnAuthenticate="LoginUser_Authenticate" Width="100%">
-                <LayoutTemplate>
+            <%--<asp:Login ID="LoginUser" runat="server" EnableViewState="false" OnAuthenticate="LoginUser_Authenticate" Width="100%">--%>                <%--<LayoutTemplate>--%>
                     <div class="header">Iniciar Sesión</div>
                     <div class="body bg-gray">
                         <div class="form-group">
-                            <asp:TextBox ID="UserName" runat="server" CssClass="form-control" placeholder="Digite el usuario"></asp:TextBox>
+                            <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="Digite el usuario"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="Password" runat="server" CssClass="form-control" TextMode="Password" placeholder="Digite el password"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Digite el password"></asp:TextBox>
                         </div>
                     </div>
 
                     <div class="footer">
-                        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn bg-blue-gradient btn-block" />
+                        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn bg-blue-gradient btn-block" OnClick="btnIngresar_Click" />
+                        <asp:Label ID="lblMensajeError" runat="server" Font-Bold="True" ForeColor="Red" Text=" " Visible="True"></asp:Label>
                     </div>
-                </LayoutTemplate>
-            </asp:Login>
+            <%--</LayoutTemplate>--%>            <%--</asp:Login>--%>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
