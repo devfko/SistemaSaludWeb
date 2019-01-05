@@ -18,7 +18,7 @@ namespace CapaPresentacion
         {
             if (!Page.IsPostBack)
             {
-                //Session["UserSistemaWeb"] = null;
+                //Session["UserSession"] = null;
             }
         }
 
@@ -30,20 +30,20 @@ namespace CapaPresentacion
         //    {
         //        Empleado objEmpleado = EmpleadoLN.getInstance().AccesoSistema(LoginUser.UserName, LoginUser.Password);
 
-        //        if (objEmpleado != null)
-        //        {
-        //            SessionManager = new SessionManager(Session);
-        //            SessionManager.UserSessionObjeto = objEmpleado;
+        //    if (objEmpleado != null)
+        //    {
+        //        SessionManager = new SessionManager(Session);
+        //        SessionManager.UserSession = objEmpleado.Usuario.ToString();
 
-        //            FormsAuthentication.RedirectFromLoginPage(LoginUser.UserName, false);
-        //            //Response.Write("<script>alert('USUARIO CORRECTO')</script>");
-        //            //Response.Redirect("PanelGeneral.aspx");
-        //        }
-        //        else
-        //        {
-        //            Response.Write("<script>alert('USUARIO INCORRECTO')</script>");
-        //        }
-        //    }            
+        //        FormsAuthentication.RedirectFromLoginPage(LoginUser.UserName, false);
+        //        //Response.Write("<script>alert('USUARIO CORRECTO')</script>");
+        //        //Response.Redirect("PanelGeneral.aspx");
+        //    }
+        //    else
+        //    {
+        //        Response.Write("<script>alert('USUARIO INCORRECTO')</script>");
+        //    }
+        //    }
         //}
 
         protected void btnIngresar_Click(object sender, EventArgs e)

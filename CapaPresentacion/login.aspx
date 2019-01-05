@@ -11,9 +11,10 @@
     <link href="css/AdminLTE.css" type="text/css" rel="stylesheet" />
 </head>
 <body class="bg-black">
-    <div class="form-box" id="login-box">
-        <form id="form1" runat="server">
-            <%--<asp:Login ID="LoginUser" runat="server" EnableViewState="false" OnAuthenticate="LoginUser_Authenticate" Width="100%">--%>                <%--<LayoutTemplate>--%>
+    <form id="form1" runat="server">
+        <div class="form-box" id="login-box">
+            <%--<asp:Login ID="LoginUser" runat="server" EnableViewState="false" OnAuthenticate="LoginUser_Authenticate" Width="100%">
+                <LayoutTemplate>--%>
                     <div class="header">Iniciar Sesión</div>
                     <div class="body bg-gray">
                         <div class="form-group">
@@ -25,13 +26,14 @@
                     </div>
 
                     <div class="footer">
-                        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn bg-blue-gradient btn-block" OnClick="btnIngresar_Click" />
+                        <asp:Button ID="btnIngresar" runat="server" CommandName="Login" Text="Ingresar" CssClass="btn bg-blue-gradient btn-block" OnClick="btnIngresar_Click"  />
                         <asp:Label ID="lblMensajeError" runat="server" Font-Bold="True" ForeColor="Red" Text=" " Visible="True"></asp:Label>
                     </div>
-            <%--</LayoutTemplate>--%>            <%--</asp:Login>--%>
-        </form>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <%--</LayoutTemplate>
+            </asp:Login>--%>
+        </div>
+    </form>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>

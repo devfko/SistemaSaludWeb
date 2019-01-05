@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GestionarHorarioMedico.aspx" />
     <Content Include="GestionarPaciente.aspx" />
     <Content Include="jAlert\images\error-icon.png" />
     <Content Include="jAlert\images\help.gif" />
@@ -81,6 +82,7 @@
     <Content Include="js\AdminLTE\dashboard.js" />
     <Content Include="js\AdminLTE\demo.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\horariosMedico.js" />
     <Content Include="js\jquery-3.1.0.min.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -411,7 +413,9 @@
     <Content Include="img\user2.jpg" />
     <Content Include="login.aspx" />
     <Content Include="PanelGeneral.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\BasePage.cs">
@@ -419,6 +423,13 @@
     </Compile>
     <Compile Include="Custom\CustomMembershipProvider.cs" />
     <Compile Include="Custom\SessionManager.cs" />
+    <Compile Include="GestionarHorarioMedico.aspx.cs">
+      <DependentUpon>GestionarHorarioMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarHorarioMedico.aspx.designer.cs">
+      <DependentUpon>GestionarHorarioMedico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarPaciente.aspx.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

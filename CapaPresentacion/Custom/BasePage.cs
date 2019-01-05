@@ -39,13 +39,13 @@ namespace CapaPresentacion.Custom
                         string cookie = Request.Headers["Cookie"];
                         if (cookie != null && cookie.IndexOf("ASP.NET_SessionId") >= 0)
                         {
-                            Response.Redirect("~/login.aspx");
+                            Response.Redirect("~/login.aspx", false);
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
-                        Response.Redirect("~/login.aspx");
+                        Response.Redirect("~/login.aspx", false);
                     }
                 }
             }
