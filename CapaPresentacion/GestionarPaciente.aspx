@@ -148,3 +148,6 @@
     </div>
 
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script type="text/javascript" src="js/paciente.js"></script>
+</asp:Content>

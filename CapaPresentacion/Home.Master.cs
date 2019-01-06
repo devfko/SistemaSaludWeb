@@ -11,7 +11,10 @@ namespace CapaPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserSistemaWeb"] == null)
+            {
+                Response.Redirect("~/login.aspx");
+            }            
         }
     }
 }
