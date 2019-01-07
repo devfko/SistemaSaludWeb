@@ -15,7 +15,7 @@ function addRowDT(data) {
             data[i].Edad,
             data[i].Direccion,
             '<button type="button" value="Modificar" title="Modificar" class="btn btn-primary btn-edit" data-target="#imodal" data-toggle="modal"><i class="fa fa-check-square"></i></button>' +
-            '<button type="button"="Eliminar" title="Eliminar" class="btn btn-danger btn-delete" ><i class="fa fa-minus-square"></i></button>'
+            '<button type="button" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete" ><i class="fa fa-minus-square"></i></button>'
         ]);
     }
 

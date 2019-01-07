@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="GestionarHorarioMedico.aspx" />
     <Content Include="GestionarPaciente.aspx" />
+    <Content Include="GestionarReservaCitas.aspx" />
     <Content Include="jAlert\images\error-icon.png" />
     <Content Include="jAlert\images\help.gif" />
     <Content Include="jAlert\images\important.gif" />
@@ -203,6 +204,7 @@
     <Content Include="js\plugins\misc\jquery.placeholder.js" />
     <Content Include="js\plugins\misc\modernizr.min.js" />
     <Content Include="js\plugins\misc\respond.min.js" />
+    <Content Include="js\plugins\moments\moment.min.js" />
     <Content Include="js\plugins\morris\morris.js" />
     <Content Include="js\plugins\morris\morris.min.js" />
     <Content Include="js\plugins\slimScroll\jquery.slimscroll.js" />
@@ -436,6 +438,13 @@
     </Compile>
     <Compile Include="GestionarPaciente.aspx.designer.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarReservaCitas.aspx.cs">
+      <DependentUpon>GestionarReservaCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarReservaCitas.aspx.designer.cs">
+      <DependentUpon>GestionarReservaCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>

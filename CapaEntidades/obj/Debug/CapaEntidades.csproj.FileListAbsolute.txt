@@ -2,4 +2,3 @@ D:\Proyectos\SistemaSaludWeb\CapaEntidades\bin\Debug\CapaEntidades.dll
 D:\Proyectos\SistemaSaludWeb\CapaEntidades\bin\Debug\CapaEntidades.pdb
 D:\Proyectos\SistemaSaludWeb\CapaEntidades\obj\Debug\CapaEntidades.dll
 D:\Proyectos\SistemaSaludWeb\CapaEntidades\obj\Debug\CapaEntidades.pdb
-D:\Proyectos\SistemaSaludWeb\CapaEntidades\obj\Debug\CapaEntidades.csprojResolveAssemblyReference.cache

@@ -26,6 +26,7 @@
                     </div>
                     <div class="box-footer">
                         <asp:HiddenField id="txtIdMedico" runat="server" />
+                        <asp:HiddenField id="txtIdHorario" runat="server" />
                         <div class="row form-group">
                             <div class="col-md-5">
                                 <strong>Nombres:</strong>
@@ -59,17 +60,17 @@
                         <h3 class="box-title">Horario de Atención</h3>
                     </div>
                     <div class="box-body table table-responsive">
-                        <table id="tbl_pacientes" class="table table-bordered table-hover">
+                        <table id="tbl_horarios" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th></th>
+                                    <th></th><!--CONTENEDOR DEL ID DEL HORARIO DE ATENCION -->
                                     <th>FECHA DE ATENCIÓN</th>
                                     <th>HORA DE ATENCIÓN</th>
-                                    <th>ESTADO</th>
                                 </tr>
                             </thead>
-                            <tbody id="tbl_body_table">
+                            <tbody id="tbl_body_table">                                
                                 <!-- DATA POR MEDIO DE AJAX -->
                             </tbody>
                         </table>
@@ -124,11 +125,52 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="imodal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <h3 class="modal-title">
+                        <i class="fa fa-clock-o"></i>
+                        Editar Horario
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Fecha:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <asp:TextBox ID="txtEditarFecha" CssClass="form-control" data-inputmask="'alias': 'dd/mm/yyyy'"
+                                data-mask="" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="bootstrap-timepicker">
+                        <div class="form-group">
+                            <label>Hora Inicio:</label>
+                            <div class="input-group">
+                                <asp:TextBox ID="txtEditarHora" CssClass="form-control timepicker" runat="server"></asp:TextBox>
+                                <div class="input-group-addon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer clearfix">
+                    <asp:Button ID="btnEditar" runat="server" CssClass="btn btn-primary" Text="Editar" />
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script src="js/plugins/input-mask/jquery.inputmask.js"></script>
     <script src="js/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
     <script src="js/plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <script src="js/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="js/plugins/moments/moment.min.js" ></script>
     <script src="js/horariosMedico.js"></script>
 </asp:Content>

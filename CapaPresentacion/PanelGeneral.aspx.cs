@@ -12,12 +12,8 @@ namespace CapaPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserSistemaWeb"] != null)
-            //if (SessionManager.UserSessionObjeto != null)
-            {
-                Response.Write("<script>alert('Bienvenido'" + Session["UserSistemaWeb"].ToString() + ")</script>");
-            }
-            else
+            if (Session["UserSistemaWeb"] == null)
+            //if (SessionManager.UserSessionObjeto != null)            
             {
                 Response.Redirect("~/login.aspx");
             }

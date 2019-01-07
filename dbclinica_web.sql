@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-01-2019 a las 18:54:07
+-- Tiempo de generación: 07-01-2019 a las 23:06:19
 -- Versión del servidor: 10.1.29-MariaDB
 -- Versión de PHP: 7.2.0
 
@@ -26,6 +26,27 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPActualizarHorarioAtencion` (IN `prmIdHorario` INT, IN `prmFecha` DATE, IN `prmHora` TIME)  NO SQL
+BEGIN
+DECLARE HoraNueva int;
+
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+    	GET DIAGNOSTICS CONDITION 1
+        	@state = RETURNED_SQLSTATE, 
+            @rtc    = MYSQL_ERRNO,
+            @rmg    = MESSAGE_TEXT; -- MySQL 5.6 > : comment diagnostics for lower versions
+            ROLLBACK;
+        END;
+    /*Obtener el ID del parametro Hora*/
+    SELECT h.idHora INTO HoraNueva
+    FROM hora h WHERE h.hora = prmHora;
+
+	UPDATE horarioatencion HA 
+    SET HA.fecha=prmFecha, HA.idHoraInicio=HoraNueva
+    WHERE HA.idHorarioAtencion=prmIdHorario;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPActualizarPaciente` (IN `prmId` INT, IN `prmDireccion` VARCHAR(50))  NO SQL
 BEGIN
 	UPDATE paciente SET direccion=prmDireccion WHERE idPaciente=prmId;
@@ -37,6 +58,17 @@ BEGIN
     FROM medico M INNER JOIN empleado E ON M.idEmpleado=E.idEmpleado
     INNER JOIN especialidad S ON S.idEspecialidad=M.idEspecialidad
     WHERE m.estado=1 AND E.nroDocumento=prmDni;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPConsultarHorarioAtencion` (IN `prmIdMedico` INT)  NO SQL
+BEGIN
+	SELECT M.idMedico, HA.idHorarioAtencion, HA.fecha, H.hora
+    FROM medico M
+    INNER JOIN horarioatencion HA ON M.idMedico=HA.idMedico
+    INNER JOIN hora H ON H.idHora=HA.idHoraInicio
+    WHERE M.idMedico=prmIdMedico
+    AND HA.fecha >= NOW()
+    AND HA.estado=1;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPConsultarPacientes` ()  NO SQL
@@ -51,6 +83,11 @@ BEGIN
             p.direccion
     FROM paciente p
     WHERE p.estado = 1;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPEliminarHorarioAtencion` (IN `prmIdHorarioAtencion` INT)  NO SQL
+BEGIN
+	UPDATE horarioatencion HA SET HA.estado=0 WHERE HA.idHorarioAtencion=prmIdHorarioAtencion;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPEliminarPaciente` (IN `prmIDPaciente` INT)  NO SQL
@@ -320,7 +357,9 @@ CREATE TABLE `horarioatencion` (
 --
 
 INSERT INTO `horarioatencion` (`idHorarioAtencion`, `idMedico`, `idHoraInicio`, `fecha`, `fechaFin`, `estado`, `idDiaSemana`) VALUES
-(2, 3, 4, '2012-12-12 00:00:00.000', NULL, 1, NULL);
+(30, 3, 7, '2090-07-12 00:00:00.000', NULL, 1, NULL),
+(31, 3, 6, '2005-05-05 00:00:00.000', NULL, 1, NULL),
+(33, 3, 7, '2055-03-05 00:00:00.000', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -464,7 +503,7 @@ ALTER TABLE `hora`
 --
 ALTER TABLE `horarioatencion`
   ADD PRIMARY KEY (`idHorarioAtencion`),
-  ADD UNIQUE KEY `idMedico` (`idMedico`,`idHoraInicio`),
+  ADD UNIQUE KEY `UNQ_KEY_HA` (`idMedico`,`idHoraInicio`,`fecha`) USING BTREE,
   ADD KEY `FK_HorarioAtencion_DiaSemana` (`idDiaSemana`),
   ADD KEY `FK_HorarioAtencion_Hora` (`idHoraInicio`);
 
@@ -550,7 +589,7 @@ ALTER TABLE `hora`
 -- AUTO_INCREMENT de la tabla `horarioatencion`
 --
 ALTER TABLE `horarioatencion`
-  MODIFY `idHorarioAtencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idHorarioAtencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `medico`
