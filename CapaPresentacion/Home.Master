@@ -91,6 +91,8 @@
             </section>
             <section class="content">
                 <form id="form1" runat="server">
+                    <asp:ScriptManager ID="scriptManager" runat="server">
+                    </asp:ScriptManager>
                     <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             <!-- CARGAR EL DISEÑO DE LA PAGINA SELECCIONADA -->

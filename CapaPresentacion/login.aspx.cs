@@ -62,5 +62,10 @@ namespace CapaPresentacion
                 lblMensajeError.Text = "Usuario y/o Contraseña Incorrecto";
             }
         }
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

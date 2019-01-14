@@ -171,5 +171,55 @@ namespace CapaAccesoDatos
             }
             return lista;
         }
+
+        public List<HorarioAtencion> ListarHorarioReservas(Int32 idEspecialidad, DateTime Fecha)
+        {
+            //Declaramos la lista vacia
+            List<HorarioAtencion> lista = new List<HorarioAtencion>();
+            MySqlConnection conexion = null;
+            MySqlCommand cmd = null;
+            MySqlDataReader dr = null;
+
+            try
+            {
+                conexion = Conexion.getInstance().ConexionBD();
+                cmd = conexion.CreateCommand();
+                cmd.CommandText = "SPConsultarHorarioAtencionFecha";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("prmIdEspecialidad", idEspecialidad);
+                cmd.Parameters.AddWithValue("prmFecha", Fecha);
+                conexion.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    HorarioAtencion objHorarioAtencion = new HorarioAtencion();
+                    Medico objMedico = new Medico();
+                    Hora objHora = new Hora();
+
+                    objHora.idHora = Convert.ToInt32(dr["idHora"].ToString());
+                    objHora.hora = dr["hora"].ToString();
+                    
+                    objMedico.idMedico = Convert.ToInt32(dr["idMedico"].ToString());
+                    objMedico.Nombre = dr["nombres"].ToString();
+
+                    objHorarioAtencion.Hora = objHora;
+                    objHorarioAtencion.Medico = objMedico;
+                    objHorarioAtencion.idHorarioAtencion = Convert.ToInt32(dr["idHorarioAtencion"].ToString());
+                    objHorarioAtencion.Fecha = Convert.ToDateTime(dr["fecha"].ToString());                    
+
+                    lista.Add(objHorarioAtencion);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return lista;
+        }
     }
 }

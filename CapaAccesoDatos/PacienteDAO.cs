@@ -62,6 +62,48 @@ namespace CapaAccesoDatos
             return respuesta;
         }
 
+        public Paciente BuscarPacienteDNI(string dni)
+        {
+            MySqlConnection conexion = null;
+            MySqlCommand cmd = null;
+            MySqlDataReader dr = null;
+            Paciente objPaciente = null;
+            try
+            {
+                conexion = Conexion.getInstance().ConexionBD();
+                cmd = conexion.CreateCommand();
+                cmd.CommandText = "SPConsultarPacienteDNI";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("prmDni", dni);
+                conexion.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    objPaciente = new Paciente()
+                    {
+                        IdPaciente = Convert.ToInt32(dr["idPaciente"].ToString()),
+                        Nombres = dr["nombres"].ToString(),
+                        ApPaterno = dr["ApPaterno"].ToString(),
+                        ApMaterno = dr["ApMaterno"].ToString(),
+                        Telefono = dr["telefono"].ToString(),
+                        Edad = Convert.ToInt32(dr["edad"].ToString()),
+                        Sexo = Convert.ToChar(dr["sexo"].ToString())
+                    };                    
+                }
+            }
+            catch (Exception ex)
+            {
+                objPaciente = null;
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return objPaciente;
+        }
+
         public List<Paciente> ListarPacientes()
         {
             //Declaramos la lista vacia
